@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos Maneiros</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Vídeos Maneiros</h1>
+    </header>
+
+    <main>
+        <section id="video-list">
+            <h2>Lista de Vídeos</h2>
+            <ul id="videos">
+                <!--<li onclick="playVideo(this)" 
+                    data-src="/Videos/video1/video1.mp4"
+                    data-title="Cena secreta do modo zombie Call of Duty Black Ops 6 em 4K"
+                    data-canal="GamesClips"
+                    data-describe="Cena ultra secreta da história do modo zombie do Call of Duty: Black Ops 6 em 4K">
+                    <a href="https://www.youtube.com/watch?v=fYKgtvQ38Ig&t=1s" target="_blank">Link do vídeo</a><br>
+                    <img src="/Videos/video1/BO.png" alt="">
+                    <p>Canal: GamesClips</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
+                </li>-->
+                <li onclick="playVideo(this)"
+                    data-src="Videos/video2/video2.mp4"
+                    data-title="Todos contra C++ em 97 segundos"
+                    data-canal="Jarvis BR"
+                    data-describe="Explicando em 97 segundos por que a linguagem C++ é tão ruim.">
+                    <a href="https://www.youtube.com/watch?v=M23Ho__KGMA" target="_blank">Link do vídeo</a><br>
+                    <img src="/Videos/video2/C+.png" alt="">
+                    <p>Canal: Jarvis BR</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
+                </li>
+
+                <li onclick="playVideo(this)"
+                    data-src="Videos/video3/video3.mp4"
+                    data-title="A World without... Problems"
+                    data-canal="A World without"
+                    data-describe="Vídeo conceitual sobre como seria um mundo sem problemas.">
+                    <a href="https://www.youtube.com/watch?v=vkkoqF8tvqU" target="_blank">Link do vídeo</a><br>
+                    <img src="/Videos/video3/world.png" alt="">
+                    <p>Canal: A World without</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
+                </li>
+
+                <!--<li onclick="playVideo(this)"
+                    data-src="/Videos/video4/video4.mp4"
+                    data-title="Comprei um monitor game na Shopee!! kkkkkkk"
+                    data-canal="Zharir"
+                    data-describe="Reação e unboxing de um monitor gamer comprado na Shopee.">
+                    <a href="https://www.youtube.com/watch?v=ctcAM6abIKw&t=45s" target="_blank">Link do vídeo</a><br>
+                    <img src="/Videos/video4/monitor.png" alt="">
+                    <p>Canal: Zharir</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
+                </li>-->
+
+                <li onclick="playVideo(this)"
+                    data-src="Videos/video5/video5.mp4"
+                    data-title="Emacs me fez PERDER a esposa"
+                    data-canal="Lucas Montano"
+                    data-describe="História cômica sobre como o Emacs afetou sua vida amorosa.">
+                    <a href="https://www.youtube.com/watch?v=VGmf4ludfH0" target="_blank">Link do vídeo</a><br>
+                    <img src="/Videos/video5/LucasMontano.png" alt="">
+                    <p>Canal: Lucas Montano</p>
+                    <p>Descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero fugit tempore, molestiae sapiente tempora. Doloribus, excepturi ut neque amet culpa ipsam optio natus dignissimos nisi, error temporibus voluptatem porro?</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="video-player">
+            <h2 id="video-title">Clique em um vídeo para assistir</h2>
+
+            <!-- Player principal -->
+            <video id="player" controls>
+                <source id="video-source" src="" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+
+            <!-- 🔹 Seletor de resolução -->
+            <div id="res-selector" style="margin-top: 10px;">
+                <label for="resolution">Resolução:</label>
+                <select id="resolution" onchange="changeResolution()">
+                    <option value="480p">480p</option>
+                    <option value="720p" selected>720p</option>
+                    <!--<option value="1080p">1080p</option>-->
+                </select>
+            </div>
+
+            <div id="video-info"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
