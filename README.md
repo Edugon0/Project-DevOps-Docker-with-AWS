@@ -67,3 +67,85 @@ meu-projeto/
 ```
 
 ---
+## 🏗️ Arquitetura do Projeto
+
+![Deploy Pipeline](./Reference/deploy_pipeline_diagram.svg)
+
+## 📦 Fase 1: Preparação do Ambiente Local
+
+### Passo 1.1: Verificar estrutura do projeto
+
+Navegue até o diretório do seu projeto:
+```bash
+cd caminho/para/seu/projeto
+ls -la
+```
+
+Você deve ver a pasta `ProjetoTCC/` com seus arquivos:
+```bash
+ls -la ProjetoTCC/
+```
+
+*[Espaço para print: Estrutura de arquivos do projeto]*
+
+### Passo 1.2: Testar o website localmente (opcional)
+
+Você pode abrir o `index.html` diretamente no navegador para verificar se está funcionando:
+```bash
+# No Mac
+open website/index.html
+
+# No Linux
+xdg-open website/index.html
+
+# No Windows (PowerShell)
+start website/index.html
+```
+
+![Deploy Pipeline](./Reference/deploy_pipeline_diagram.svg)
+
+---
+
+## 🐳 Fase 2: Containerização com Docker
+
+### Passo 2.1: Criar o Dockerfile
+
+Na raiz do projeto (mesmo nível da pasta `website/`), crie um arquivo chamado `Dockerfile`:
+
+```bash
+touch Dockerfile
+```
+
+### Passo 2.2: Escrever o Dockerfile
+
+Abra o Dockerfile no seu editor e adicione:
+
+```dockerfile
+# Imagem base - Nginx Alpine (leve e eficiente)
+FROM nginx:alpine
+
+# Copia os arquivos do website para o diretório do Nginx
+COPY website/ /usr/share/nginx/html/
+
+# Expõe a porta 80 (documentação - não abre a porta realmente)
+EXPOSE 80
+
+# Comando padrão quando o container iniciar
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+#### 🎓 Entendendo cada linha:
+
+- **FROM nginx:alpine**: Define a imagem base. Alpine é uma versão Linux super leve
+- **COPY**: Copia arquivos do host para dentro da imagem
+- **EXPOSE**: Documenta qual porta o container usa
+- **CMD**: Define o comando padrão ao iniciar o container
+
+*[Espaço para print: Dockerfile criado no editor]*
+
+### Passo 2.3: Construir a imagem Docker
+
+No terminal, na raiz do projeto, execute:
+
+```bash
+docker build -t meu-website:v1.0 .
