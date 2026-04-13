@@ -141,7 +141,7 @@ CMD ["nginx", "-g", "daemon off;"]
 - **EXPOSE**: Documenta qual porta o container usa
 - **CMD**: Define o comando padrão ao iniciar o container
 
-*[Espaço para print: Dockerfile criado no editor]*
+![Deploy Pipeline](./Reference/dockerfile.png)
 
 ### Passo 2.3: Construir a imagem Docker
 
