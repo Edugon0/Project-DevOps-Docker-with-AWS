@@ -30,7 +30,7 @@ Para verificar a instalação:
 docker --version
 ```
 
-*[Espaço para print: Resultado do comando docker --version]*
+![Deploy Pipeline](./Reference/docker-version.png)
 
 #### 2. **AWS CLI**
 Instale seguindo a [documentação oficial](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
@@ -102,7 +102,7 @@ xdg-open website/index.html
 start website/index.html
 ```
 
-![Deploy Pipeline](./Reference/deploy_pipeline_diagram.svg)
+![Deploy Pipeline](./Reference/my-app.png)
 
 ---
 
