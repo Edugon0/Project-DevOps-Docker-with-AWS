@@ -1,4 +1,4 @@
-# 🚀 Projeto 1: Containerização com Docker e Deploy Manual na AWS
+# 🚀 Projeto: Containerização com Docker e Deploy Manual na AWS
 
 ## 🎯 Visão Geral
 
